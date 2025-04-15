@@ -1,0 +1,128 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local TXLoader = Instance.new("ScreenGui")
+local Page = Instance.new("Frame")
+local Frame = Instance.new("Frame")
+local LoadTxSound = Instance.new("TextButton")
+local UICorner = Instance.new("UICorner")
+local TextTxSound = Instance.new("TextLabel")
+local UICorner_2 = Instance.new("UICorner")
+local UICorner_3 = Instance.new("UICorner")
+local haut = Instance.new("Frame")
+local TitleHaut = Instance.new("TextLabel")
+local TX = Instance.new("TextLabel")
+local ClosePage = Instance.new("ImageButton")
+local UICorner_4 = Instance.new("UICorner")
+
+--Properties:
+
+TXLoader.Name = "TXLoader"
+TXLoader.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+TXLoader.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Page.Name = "Page"
+Page.Parent = TXLoader
+Page.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
+Page.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Page.BorderSizePixel = 0
+Page.Position = UDim2.new(0.298932374, 0, 0.234924629, 0)
+Page.Size = UDim2.new(0, 678, 0, 421)
+
+Frame.Parent = Page
+Frame.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.0221238937, 0, 0.159144893, 0)
+Frame.Size = UDim2.new(0, 647, 0, 335)
+
+LoadTxSound.Name = "LoadTxSound"
+LoadTxSound.Parent = Frame
+LoadTxSound.BackgroundColor3 = Color3.fromRGB(120, 1, 255)
+LoadTxSound.BorderColor3 = Color3.fromRGB(0, 0, 0)
+LoadTxSound.BorderSizePixel = 0
+LoadTxSound.Position = UDim2.new(0.231235132, 0, 0.0484844148, 0)
+LoadTxSound.Size = UDim2.new(0, 61, 0, 26)
+LoadTxSound.Font = Enum.Font.Unknown
+LoadTxSound.Text = "Load"
+LoadTxSound.TextColor3 = Color3.fromRGB(255, 255, 255)
+LoadTxSound.TextSize = 28.000
+
+UICorner.Parent = LoadTxSound
+
+TextTxSound.Name = "TextTxSound"
+TextTxSound.Parent = Frame
+TextTxSound.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextTxSound.BackgroundTransparency = 1.000
+TextTxSound.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextTxSound.BorderSizePixel = 0
+TextTxSound.Position = UDim2.new(0.0154717993, 0, 0.0270429477, 0)
+TextTxSound.Size = UDim2.new(0, 140, 0, 41)
+TextTxSound.Font = Enum.Font.SourceSans
+TextTxSound.Text = "TX Sound V1"
+TextTxSound.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextTxSound.TextSize = 28.000
+
+UICorner_2.CornerRadius = UDim.new(0.100000001, 0)
+UICorner_2.Parent = Frame
+
+UICorner_3.Parent = Page
+
+haut.Name = "haut"
+haut.Parent = TXLoader
+haut.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+haut.BorderColor3 = Color3.fromRGB(0, 0, 0)
+haut.BorderSizePixel = 0
+haut.Position = UDim2.new(0.298932374, 0, 0.234924629, 0)
+haut.Size = UDim2.new(0, 678, 0, 52)
+
+TitleHaut.Name = "TitleHaut"
+TitleHaut.Parent = haut
+TitleHaut.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TitleHaut.BackgroundTransparency = 1.000
+TitleHaut.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TitleHaut.BorderSizePixel = 0
+TitleHaut.Position = UDim2.new(0.421828896, 0, 0, 0)
+TitleHaut.Size = UDim2.new(0, 106, 0, 46)
+TitleHaut.Font = Enum.Font.Oswald
+TitleHaut.Text = "Loader"
+TitleHaut.TextColor3 = Color3.fromRGB(255, 255, 255)
+TitleHaut.TextSize = 55.000
+TitleHaut.TextWrapped = true
+
+TX.Name = "TX"
+TX.Parent = haut
+TX.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TX.BackgroundTransparency = 1.000
+TX.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TX.BorderSizePixel = 0
+TX.Position = UDim2.new(0.00884955749, 0, 0.115384616, 0)
+TX.Size = UDim2.new(0, 54, 0, 46)
+TX.Font = Enum.Font.Unknown
+TX.Text = "TX"
+TX.TextColor3 = Color3.fromRGB(255, 255, 255)
+TX.TextSize = 55.000
+TX.TextWrapped = true
+
+ClosePage.Name = "ClosePage"
+ClosePage.Parent = haut
+ClosePage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ClosePage.BackgroundTransparency = 1.000
+ClosePage.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ClosePage.BorderSizePixel = 0
+ClosePage.Position = UDim2.new(0.935103238, 0, 0.15384616, 0)
+ClosePage.Size = UDim2.new(0, 34, 0, 36)
+ClosePage.Image = "http://www.roblox.com/asset/?id=103344771690872"
+
+UICorner_4.Parent = haut
+
+-- Script to handle the Load button click event
+LoadTxSound.MouseButton1Click:Connect(function()
+    -- Hide the GUI
+    TXLoader:Destroy()
+
+    -- Load and execute the script
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/azerty5757102383778/script/refs/heads/main/txsound/txsound", true))()
+end)
